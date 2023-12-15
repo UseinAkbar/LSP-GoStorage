@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('users_id');
+            $table->string('durasi');
+            $table->string('denda');
+            $table->string('status_sewa');
+            $table->string('total_harga');
             $table->foreign('users_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('gudang_id');
             $table->foreign('gudang_id')->references('id')->on('gudang')->onUpdate('cascade')->onDelete('cascade');
